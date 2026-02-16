@@ -1,0 +1,108 @@
+@import "tailwindcss";
+
+@config "../tailwind.config.ts";
+
+@theme {
+  --font-sans: var(--font-inter), "Inter", "system-ui", "sans-serif";
+
+  /* Luxury Typography Scale */
+  --font-size-luxury-h1: clamp(32px, 9vw, 120px);
+  --font-size-luxury-h1--line-height: 1.02;
+  --font-size-luxury-h1--letter-spacing: -0.05em;
+
+  --font-size-luxury-h2: clamp(28px, 7vw, 68px);
+  --font-size-luxury-h2--line-height: 1.05;
+  --font-size-luxury-h2--letter-spacing: -0.04em;
+
+  --font-size-luxury-h3: clamp(24px, 4vw, 28px);
+  --font-size-luxury-h3--line-height: 1.25;
+  --font-size-luxury-h3--letter-spacing: -0.02em;
+
+  --font-size-luxury-body: 21px;
+  --font-size-luxury-body--line-height: 1.75;
+
+  --font-size-luxury-sm: 15px;
+  --font-size-luxury-sm--line-height: 1.6;
+
+  --spacing-luxury-section: 280px;
+  --spacing-luxury-gap-lg: 160px;
+  --spacing-luxury-gap-md: 100px;
+  --spacing-luxury-gap-sm: 56px;
+
+  --radius-luxury-container: clamp(24px, 4vw, 40px);
+  --radius-luxury-card: clamp(20px, 3vw, 32px);
+  --radius-luxury-button: 100px;
+
+  /* Responsive Spacing Overrides */
+  --spacing-luxury-section: clamp(100px, 15vw, 280px);
+  --spacing-luxury-gap-lg: clamp(60px, 8vw, 160px);
+  --spacing-luxury-gap-md: clamp(40px, 6vw, 100px);
+  --spacing-luxury-gap-sm: clamp(24px, 4vw, 56px);
+
+  /* Color System */
+  --color-luxury-accent: #00ff41;
+  /* "The Detailing Aura" Electric Green */
+  --color-luxury-accent-muted: rgba(0, 255, 65, 0.1);
+  --color-luxury-white-5: rgba(255, 255, 255, 0.05);
+  --color-luxury-white-10: rgba(255, 255, 255, 0.1);
+  --color-luxury-white-40: rgba(255, 255, 255, 0.4);
+  --color-luxury-white-60: rgba(255, 255, 255, 0.6);
+  --color-luxury-dim: #e5e5e5;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    background-color: #030303;
+    color: white;
+  }
+}
+
+@layer utilities {
+  .noise-texture {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    opacity: 0.025;
+    pointer-events: none;
+  }
+
+  .vignette-layer {
+    background: radial-gradient(circle at center, transparent 0%, rgba(0, 0, 0, 0.4) 100%);
+    pointer-events: none;
+  }
+
+  .glass-card-refined {
+    background: linear-gradient(165deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.01));
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  /* Strategic Green Atmosphere */
+  .accent-glow-soft {
+    background: radial-gradient(circle at center, var(--color-luxury-accent-muted) 0%, transparent 70%);
+  }
+
+  .max-w-60ch {
+    max-width: 60ch;
+  }
+}
+
+.container-lux {
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: clamp(1.5rem, 5vw, 3rem);
+  padding-right: clamp(1.5rem, 5vw, 3rem);
+}
+
+::selection {
+  background-color: var(--color-luxury-accent-muted);
+  color: white;
+}
+
+/* Mobile Hero Override */
+@media (max-width: 768px) {
+  #hero img[alt="Land Cruiser"] {
+    width: 140vw !important;
+    bottom: -10vh !important;
+  }
+}
