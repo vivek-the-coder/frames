@@ -32,6 +32,7 @@ export default {
             colors: {
                 "luxury-white-10": "rgba(255, 255, 255, 0.1)",
                 "luxury-white-60": "rgba(255, 255, 255, 0.6)",
+                "luxury-accent": "#00ff41",
             },
         },
     },

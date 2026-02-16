@@ -12,48 +12,48 @@ const FRAME_COUNT = 336;
 const SCENES = [
     {
         id: 0,
-        start: 0,
-        end: 61,
+        start: 0, // Adjusted to 0 for safety
+        end: 62,
         tag: "ORIGIN",
         title: "Where perfection enters the light",
         desc: "Every masterpiece begins with precise positioning"
     },
     {
         id: 1,
-        start: 62,
-        end: 97,
+        start: 63,
+        end: 98,
         tag: "ANALYSIS",
         title: "Every imperfection revealed",
         desc: "Microscopic defects exposed under controlled LED inspection"
     },
     {
         id: 2,
-        start: 98,
-        end: 150,
+        start: 99,
+        end: 151,
         tag: "PROTECTION",
         title: "Engineered defense applied by hand",
         desc: "Paint protection film applied with surgical precision"
     },
     {
         id: 3,
-        start: 151,
-        end: 211,
+        start: 152,
+        end: 212,
         tag: "CERAMIC",
         title: "Molecular-level ceramic bonding",
         desc: "Ultra-hydrophobic shield enhancing gloss and durability"
     },
     {
         id: 4,
-        start: 212,
-        end: 284,
+        start: 213,
+        end: 285,
         tag: "ISOLATION",
         title: "Sealed from the outside world",
         desc: "Controlled curing environment ensures flawless finish"
     },
     {
         id: 5,
-        start: 285,
-        end: 335,
+        start: 286,
+        end: 336,
         tag: "REVEAL",
         title: "Perfection, realized",
         desc: "A finish defined by absolute clarity and depth"
@@ -108,34 +108,14 @@ export default function ScrollCanvas() {
         };
         window.addEventListener("resize", handleResize);
 
-        // --- 2. Progressive Scene Loading ---
-        const loadedScenes = new Set<number>();
-
-        const loadScene = (sceneId: number) => {
-            if (loadedScenes.has(sceneId)) return;
-            loadedScenes.add(sceneId);
-
-            const scene = SCENES[sceneId];
-            const sceneFolder = `scene${sceneId + 1}`;
-
-            for (let i = scene.start; i <= scene.end; i++) {
-                const frameIndex = i;
-                if (!images.current[frameIndex]) {
-                    const img = new Image();
-                    // Using WebP frames from scene folders
-                    img.src = `/webp-frames/${sceneFolder}/frame_${String(frameIndex + 1).padStart(4, "0")}.webp`;
-                    images.current[frameIndex] = img;
-                }
-            }
-        };
-
-        // Initialize images array with nulls if empty
+        // --- 2. Image Preloading ---
         if (images.current.length === 0) {
-            images.current = new Array(FRAME_COUNT).fill(null);
+            for (let i = 0; i < FRAME_COUNT; i++) {
+                const img = new Image();
+                img.src = `/frames/frame_${String(i + 1).padStart(4, "0")}.jpg`;
+                images.current.push(img);
+            }
         }
-
-        // Load first scene immediately
-        loadScene(0);
 
         // --- 3. Render Logic ---
         const render = (index: number) => {
@@ -201,23 +181,7 @@ export default function ScrollCanvas() {
             anticipatePin: 1,
             onUpdate: (self) => {
                 // Map scroll progress (0-1) to total frames
-                const progress = self.progress;
-                renderState.current.targetFrame = progress * (FRAME_COUNT - 1);
-
-                // Trigger scene loading based on progress
-                const currentFrame = progress * (FRAME_COUNT - 1);
-                const currentSceneIndex = SCENES.findIndex(scene => currentFrame >= scene.start && currentFrame <= scene.end);
-
-                if (currentSceneIndex !== -1) {
-                    loadScene(currentSceneIndex);
-                    // Pre-load next scene if close to edge
-                    if (currentSceneIndex < SCENES.length - 1) {
-                        const scene = SCENES[currentSceneIndex];
-                        if (currentFrame > scene.start + (scene.end - scene.start) * 0.7) {
-                            loadScene(currentSceneIndex + 1);
-                        }
-                    }
-                }
+                renderState.current.targetFrame = self.progress * (FRAME_COUNT - 1);
             }
         });
 

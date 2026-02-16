@@ -18,8 +18,8 @@ export default function Navbar() {
 
   const navLinks = [
     { name: "Services", href: "#services" },
-    { name: "Portfolio", href: "#portfolio" },
-    { name: "Philosophy", href: "#philosophy" },
+    { name: "Pricing", href: "#pricing" },
+    { name: "About Us", href: "#about" },
     { name: "Contact", href: "#contact" },
   ];
 
@@ -63,7 +63,7 @@ export default function Navbar() {
 
         <div className="flex items-center gap-8">
           <button className="hidden lg:block group relative overflow-hidden rounded-full border border-white/10 px-10 py-3.5 text-[11px] font-bold uppercase tracking-[0.2em] text-white transition-all duration-500 hover:border-white/30">
-            <span className="relative z-10">Consultation</span>
+            <span className="relative z-10">Book Now</span>
             <div className="absolute inset-0 bg-white translate-y-full group-hover:translate-y-0 transition-transform duration-500 opacity-10" />
           </button>
 
@@ -124,7 +124,7 @@ export default function Navbar() {
                 onClick={() => setIsOpen(false)}
                 className="w-full py-7 rounded-full border border-white/10 bg-white/5 text-white font-bold uppercase tracking-[0.3em] text-[11px]"
               >
-                Inquire Now
+                Book Now
               </button>
             </motion.div>
           </motion.div>

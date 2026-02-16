@@ -24,14 +24,14 @@ export default function Footer() {
                                 aesthetic perfection and protection for connoisseurs.
                             </p>
                             <div className="flex gap-4">
-                                <div className="w-12 h-12 rounded-lg bg-white/[0.03] border border-white/5 flex items-center justify-center grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all cursor-pointer">
-                                    <span className="text-xs font-bold">IG</span>
+                                <div className="w-12 h-12 rounded-lg bg-white/[0.03] border border-white/5 flex items-center justify-center grayscale opacity-40 hover:grayscale-0 hover:opacity-100 hover:border-[#00ff41]/50 hover:text-[#00ff41] transition-all duration-500 cursor-pointer group">
+                                    <span className="text-xs font-bold group-hover:shadow-[0_0_15px_rgba(0,255,65,0.4)] transition-shadow">IG</span>
                                 </div>
-                                <div className="w-12 h-12 rounded-lg bg-white/[0.03] border border-white/5 flex items-center justify-center grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all cursor-pointer">
-                                    <span className="text-xs font-bold">FB</span>
+                                <div className="w-12 h-12 rounded-lg bg-white/[0.03] border border-white/5 flex items-center justify-center grayscale opacity-40 hover:grayscale-0 hover:opacity-100 hover:border-[#00ff41]/50 hover:text-[#00ff41] transition-all duration-500 cursor-pointer group">
+                                    <span className="text-xs font-bold group-hover:shadow-[0_0_15px_rgba(0,255,65,0.4)] transition-shadow">FB</span>
                                 </div>
-                                <div className="w-12 h-12 rounded-lg bg-white/[0.03] border border-white/5 flex items-center justify-center grayscale opacity-40 hover:grayscale-0 hover:opacity-100 transition-all cursor-pointer">
-                                    <span className="text-xs font-bold">YT</span>
+                                <div className="w-12 h-12 rounded-lg bg-white/[0.03] border border-white/5 flex items-center justify-center grayscale opacity-40 hover:grayscale-0 hover:opacity-100 hover:border-[#00ff41]/50 hover:text-[#00ff41] transition-all duration-500 cursor-pointer group">
+                                    <span className="text-xs font-bold group-hover:shadow-[0_0_15px_rgba(0,255,65,0.4)] transition-shadow">YT</span>
                                 </div>
                             </div>
                         </div>
@@ -44,7 +44,7 @@ export default function Footer() {
                                 <p className="text-[15px] font-medium italic text-white/70">Main Workshop</p>
                                 <p className="text-luxury-sm text-white/40">123 Detailer&apos;s Row, Industrial Estate<br />London, SW1A 1AA</p>
                             </div>
-                            <a href="#" className="inline-block text-[11px] uppercase tracking-[0.2em] font-bold text-luxury-accent border-b border-luxury-accent/30 pb-1 hover:border-luxury-accent transition-colors">
+                            <a href="#" className="inline-block text-[11px] uppercase tracking-[0.2em] font-bold text-[#00ff41] border-b border-[#00ff41]/30 pb-1 hover:border-[#00ff41] hover:shadow-[0_5px_10px_-3px_rgba(0,255,65,0.3)] transition-all">
                                 Get Directions
                             </a>
                         </div>
@@ -63,7 +63,7 @@ export default function Footer() {
                             </li>
                             <li className="flex justify-between">
                                 <span>Sunday</span>
-                                <span className="text-luxury-accent/50 italic">By Appointment</span>
+                                <span className="text-[#00ff41]/70 italic drop-shadow-[0_0_8px_rgba(0,255,65,0.2)]">By Appointment</span>
                             </li>
                         </ul>
                     </div>
@@ -75,8 +75,8 @@ export default function Footer() {
                                 <p className="text-2xl font-bold tracking-tight text-white">+44 20 1234 5678</p>
                                 <p className="text-luxury-sm text-white/40">info@detailingaura.com</p>
                             </div>
-                            <button className="w-full py-4 rounded-xl bg-luxury-accent/5 border border-luxury-accent/20 text-luxury-accent text-[12px] uppercase tracking-[0.2em] font-bold hover:bg-luxury-accent/10 transition-all flex items-center justify-center gap-3">
-                                <span className="w-2 h-2 rounded-full bg-luxury-accent animate-pulse" />
+                            <button className="w-full py-4 rounded-xl bg-[#00ff41]/5 border border-[#00ff41]/20 text-[#00ff41] text-[12px] uppercase tracking-[0.2em] font-bold hover:bg-[#00ff41]/10 hover:border-[#00ff41]/40 hover:shadow-[0_0_20px_rgba(0,255,65,0.1)] transition-all flex items-center justify-center gap-3 group">
+                                <span className="w-2 h-2 rounded-full bg-[#00ff41] animate-pulse group-hover:shadow-[0_0_10px_#00ff41]" />
                                 WhatsApp Specialist
                             </button>
                         </div>
@@ -86,8 +86,8 @@ export default function Footer() {
                 <div className="pt-20 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-10 text-[12px] text-white/20 tracking-[0.3em] uppercase font-bold">
                     <p>© {currentYear} The Detailing Aura. All rights reserved.</p>
                     <div className="flex gap-12">
-                        <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
-                        <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
+                        <a href="#" className="hover:text-[#00ff41] transition-colors">Privacy Policy</a>
+                        <a href="#" className="hover:text-[#00ff41] transition-colors">Terms of Service</a>
                     </div>
                 </div>
             </div>

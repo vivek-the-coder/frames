@@ -39,9 +39,9 @@ export default function BeforeAfter() {
 
                 <div className="mb-luxury-gap-md px-1 text-center">
                     <FadeIn direction="up">
-                        <p className="text-luxury-label text-luxury-white-40 uppercase font-medium mb-10">Transformation</p>
-                        <h2 className="text-luxury-h2 font-semibold text-luxury-dim leading-[1.05] tracking-[-0.04em]">
-                            Crafted to <span className="text-luxury-accent">Perfection</span>
+                        <p className="text-luxury-label text-[#00ff41]/60 uppercase font-medium mb-10">Transformation</p>
+                        <h2 className="text-luxury-h2 font-semibold text-white leading-[1.05] tracking-[-0.04em]">
+                            Crafted to <span className="text-[#00ff41] drop-shadow-[0_0_15px_rgba(0,255,65,0.4)]">Perfection</span>
                         </h2>
                     </FadeIn>
                 </div>
@@ -52,7 +52,7 @@ export default function BeforeAfter() {
                         onMouseMove={onMouseMove}
                         onTouchMove={onTouchMove}
                         onMouseDown={onMouseDown}
-                        className="relative w-full aspect-[4/3] md:aspect-[21/9] overflow-hidden rounded-luxury-container cursor-ew-resize select-none border border-white/5 shadow-[0_50px_100px_rgba(0,0,0,0.8)] group transition-all duration-700 hover:border-luxury-accent/10"
+                        className="relative w-full aspect-[4/3] md:aspect-[21/9] overflow-hidden rounded-luxury-container cursor-ew-resize select-none border border-white/5 shadow-[0_50px_100px_rgba(0,0,0,0.8)] group transition-all duration-700 hover:border-[#00ff41]/30"
                     >
                         {/* After Image */}
                         <div className="absolute inset-0">
@@ -62,7 +62,7 @@ export default function BeforeAfter() {
                                 className="w-full h-full object-cover"
                             />
                             <div className="absolute top-10 right-10 z-20">
-                                <span className="px-6 py-2.5 rounded-full border border-white/10 bg-black/50 backdrop-blur-xl text-[14px] font-bold uppercase tracking-[0.25em] text-white/70 group-hover:text-luxury-accent transition-colors duration-500">
+                                <span className="px-6 py-2.5 rounded-full border border-white/10 bg-black/50 backdrop-blur-xl text-[14px] font-bold uppercase tracking-[0.25em] text-white/70 group-hover:text-[#00ff41] group-hover:border-[#00ff41]/50 transition-colors duration-500">
                                     After
                                 </span>
                             </div>
@@ -90,15 +90,15 @@ export default function BeforeAfter() {
 
                         {/* Handle / Divider System */}
                         <div
-                            className="absolute top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-white/20 to-transparent z-20"
+                            className="absolute top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-[#00ff41]/50 to-transparent z-20"
                             style={{ left: `${position}%` }}
                         >
                             <div
-                                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 md:w-16 md:h-16 rounded-full border border-white/10 bg-white/95 backdrop-blur-3xl flex items-center justify-center transition-all duration-500 shadow-[0_0_40px_rgba(0,0,0,0.5)] group-active:scale-90"
+                                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 md:w-16 md:h-16 rounded-full border border-[#00ff41]/30 bg-black/40 backdrop-blur-md flex items-center justify-center transition-all duration-500 shadow-[0_0_30px_rgba(0,255,65,0.3)] group-active:scale-90 group-hover:bg-[#00ff41]/10"
                             >
                                 <div className="flex gap-2">
-                                    <div className="w-1.5 h-1.5 rounded-full bg-black/40" />
-                                    <div className="w-1.5 h-1.5 rounded-full bg-black/40" />
+                                    <div className="w-1.5 h-1.5 rounded-full bg-[#00ff41]" />
+                                    <div className="w-1.5 h-1.5 rounded-full bg-[#00ff41]" />
                                 </div>
                             </div>
 
