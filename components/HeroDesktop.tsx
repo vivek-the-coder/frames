@@ -33,6 +33,8 @@ export default function HeroDesktop() {
                     sizes="100vw"
                     className="object-cover object-center opacity-90"
                 />
+                {/* Brand Ambient Glow */}
+                <div className="absolute inset-0 bg-radial-gradient from-[#00ff41]/10 via-transparent to-transparent opacity-60" />
             </div>
 
             {/* Dark gradient */}
@@ -47,7 +49,7 @@ export default function HeroDesktop() {
                 items-center
                 justify-start
                 h-full
-                pt-[10vh]
+                pt-[11vh]
                 px-6
                 text-center
             ">
@@ -60,7 +62,7 @@ export default function HeroDesktop() {
                     lg:text-7xl
                     xl:text-8xl
                     uppercase
-                    drop-shadow-2xl
+                    drop-shadow-[0_0_25px_rgba(0,255,65,0.3)]
                 ">
                     Detailing Without
                     <br />
@@ -82,16 +84,16 @@ export default function HeroDesktop() {
 
                 <button className="
                     mt-10
-                    px-8 py-3.5
-                    border border-white/20
+                    px-10 py-4
+                    border border-[#00ff41]/50
                     rounded-full
-                    text-white
+                    text-[#00ff41]
                     text-sm
                     uppercase
-                    tracking-widest
-                    hover:bg-white hover:text-black
+                    tracking-[0.2em]
+                    hover:bg-[#00ff41] hover:text-black hover:shadow-[0_0_30px_rgba(0,255,65,0.4)]
                     transition-all duration-500
-                    backdrop-blur-sm
+                    backdrop-blur-md
                 ">
                     Start Your Aura
                 </button>
@@ -111,7 +113,7 @@ export default function HeroDesktop() {
                     -translate-x-1/2
                     z-20
                     w-[30vw]
-                    max-w-[1200px]
+                    max-w-[1500px]
                     pointer-events-none
                     select-none
                     will-change-transform
